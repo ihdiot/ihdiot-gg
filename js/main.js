@@ -217,7 +217,7 @@
     // 96–100 hold
     tl.to({}, { duration: 4 }, 96);
 
-    const beats = { enter: 0, unseal: 0.16, neon: 0.26, chapter: 0.36, doors: 0.73, dock: 0.94 };
+    const beats = { enter: 0, unseal: 0.16, neon: 0.26, chapter: 0.36, doors: 0.73, dock: 0.92 };
     const wanted = new URLSearchParams(location.search).get("beat");
     if (wanted != null && beats[wanted] != null) {
       const seek = () => {

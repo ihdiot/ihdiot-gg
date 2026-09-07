@@ -53,6 +53,12 @@ img { display: block; max-width: 100%; }
 .past-hero .site-bar {
   transform: none; opacity: 1; visibility: visible; transition-delay: 0s;
 }
+.past-hero .stage .wordmark,
+.past-hero .stage .doors {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none;
+}
 .site-bar__mark { display: block; width: 7.4rem; color: #fff; text-decoration: none; }
 .site-bar__mark svg { display: block; width: 100%; height: auto; }
 .site-bar__nav { display: flex; gap: 0.15rem; }
@@ -395,6 +401,12 @@ html.static .door-name { font-size: 0.72rem; letter-spacing: 0.14em; }
 .footer-mark { color: var(--paper); letter-spacing: 0.28em; font-size: 0.68rem; }
 
 /* ------------------------------------------------------------------ desktop */
+@media (max-width: 720px) {
+  .stage.is-docked .door { min-width: 3.1rem; }
+  .stage.is-docked .door-name { font-size: 0.58rem; letter-spacing: 0.1em; }
+  .obj-car { width: min(78vw, 320px); top: 10%; right: 2%; }
+}
+
 @media (min-width: 800px) {
   .wrap { width: min(calc(100% - 2.8rem), var(--max)); }
   .site-bar { padding: 0 1.4rem; height: 3.6rem; }
