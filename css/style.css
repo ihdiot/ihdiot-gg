@@ -170,11 +170,18 @@ body.doors-docked .door {
   width: min(46%, 620px);
   margin: 0;
   transform: translate(-50%, -50%);
+  color: #eef2f6;
   filter:
     drop-shadow(0 0 1px rgba(238, 242, 246, 0.7))
     drop-shadow(0 0 12px rgba(200, 214, 230, 0.22));
 }
-.wordmark svg { display: block; width: 100%; height: auto; }
+.wordmark-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Lock file is #111; invert so the hero reads cool white. */
+  filter: invert(1);
+}
 
 /* Image-space niche boxes (1536×1024 FIXED1). */
 .niches { position: absolute; inset: 0; }
