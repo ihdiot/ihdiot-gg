@@ -9,14 +9,20 @@
   const reduced = html.classList.contains("static");
   const motionOK = html.classList.contains("motion") && window.gsap && window.ScrollTrigger;
 
-  const NICHE_LEFT = [0.253, 0.394, 0.534, 0.675];
-  const NICHE_W = 0.072;
+  const NICHES = [
+    { left: 0.247, w: 0.084 },
+    { left: 0.380, w: 0.100 },
+    { left: 0.520, w: 0.100 },
+    { left: 0.669, w: 0.084 },
+  ];
   const NICHE_TOP = 0.082;
   const NICHE_H = 0.27;
   const IMG_W = 1536;
   const IMG_H = 1024;
   const POS_X = 0.5;
   const POS_Y = 0.28;
+  const SPAN_L = 0.215;
+  const SPAN_R = 0.790;
 
   const year = document.querySelector("#year");
   if (year) year.textContent = new Date().getFullYear();
@@ -31,7 +37,9 @@
   });
 
   function coverBox(cw, ch) {
-    const scale = Math.max(cw / IMG_W, ch / IMG_H);
+    const coverScale = Math.max(cw / IMG_W, ch / IMG_H);
+    const nicheScale = cw / (IMG_W * (SPAN_R - SPAN_L));
+    const scale = cw < 760 ? Math.min(coverScale, nicheScale) : coverScale;
     const w = IMG_W * scale;
     const h = IMG_H * scale;
     return { x: (cw - w) * POS_X, y: (ch - h) * POS_Y, w, h, scale };
@@ -53,8 +61,9 @@
   }
 
   function nichePoint(i, box) {
+    const n = NICHES[i];
     return {
-      x: box.x + box.w * (NICHE_LEFT[i] + NICHE_W / 2),
+      x: box.x + box.w * (n.left + n.w / 2),
       y: box.y + box.h * (NICHE_TOP + NICHE_H - 0.012),
     };
   }
