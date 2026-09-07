@@ -41,7 +41,7 @@ This is a new motion map. It does **not** extend the rejected N2b five-plate `+=
 
 ## Brand / doors
 
-- One gamertag in the hero: cool **white** geometric cutout **IHDIOT** (wide tracking, broken H / gapped D / broken T). Never orange channel-letter, never `idiot`, never `.gg`, never two marks.
+- One gamertag in the hero: **H WHITE** letter DNA — wide-spaced **IHDIOT**. Solid I. Joined H (stems slightly open). D = vertical bar + C with corner gaps. Stadium O. T bar split from the stem. Cool white, never orange channel-letter, never `idiot`, never `.gg`, never two marks. Type lock: `assets/moodboard/H-WHITE-type-lock.svg`.
 - Niche labels are real `<a>` doors (not baked into the photo):
   - Talky → https://ihdiot.github.io/talky-releases/
   - YouTube → `#youtube`

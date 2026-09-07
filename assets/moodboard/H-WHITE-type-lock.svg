@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1070 150" role="img">
+  <title>IHDIOT  H WHITE type lock</title>
+  <g fill="#111">
+    <g transform="translate(16 8)"><rect width="30" height="134" rx="1"/></g>
+    <g transform="translate(124 8)">
+      <rect width="30" height="134" rx="1"/>
+      <rect x="80" width="30" height="134" rx="1"/>
+      <rect x="30" y="54" width="50" height="26"/>
+    </g>
+    <g transform="translate(316 8)">
+      <rect width="30" height="134" rx="1"/>
+      <path d="M42 0h52a67 67 0 0 1 0 134H42v-30h40a37 37 0 0 0 0-74H42V0z"/>
+    </g>
+    <g transform="translate(552 8)"><rect width="30" height="134" rx="1"/></g>
+    <g transform="translate(660 8)">
+      <path fill-rule="evenodd" d="M67 0H81A67 67 0 0 1 81 134H67A67 67 0 0 1 67 0Zm0 30A37 37 0 0 0 67 104H81A37 37 0 0 0 81 30Z"/>
+    </g>
+    <g transform="translate(886 8)">
+      <rect width="148" height="26" rx="1"/>
+      <rect x="59" y="38" width="30" height="96" rx="1"/>
+    </g>
+  </g>
+</svg>
