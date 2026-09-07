@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 160" role="img">
+  <title>IHDIOT  H WHITE letter DNA</title>
+  <g fill="#111">
+    <!-- I -->
+    <rect x="8" y="18" width="26" height="124"/>
+    <!-- H: split crossbar -->
+    <g transform="translate(96 18)">
+      <rect width="26" height="124"/>
+      <rect x="86" width="26" height="124"/>
+      <rect x="26" y="50" width="24" height="24"/>
+      <rect x="62" y="50" width="24" height="24"/>
+    </g>
+    <!-- D: stem detached from bowl -->
+    <g transform="translate(272 18)">
+      <rect width="26" height="124"/>
+      <path d="M42 6h48a56 56 0 0 1 0 112H42V96h36a34 34 0 0 0 0-68H42V6z"/>
+    </g>
+    <!-- I -->
+    <rect x="478" y="18" width="26" height="124"/>
+    <!-- O: clean circle ring -->
+    <path fill-rule="evenodd" d="M612 18a62 62 0 1 1 0 124a62 62 0 1 1 0-124zm0 26a36 36 0 1 0 0 72a36 36 0 1 0 0-72z"/>
+    <!-- T: floating bar -->
+    <g transform="translate(736 18)">
+      <rect width="132" height="24"/>
+      <rect x="53" y="40" width="26" height="84"/>
+    </g>
+  </g>
+</svg>
