@@ -5,7 +5,8 @@
     <g transform="translate(124 8)">
       <rect width="30" height="134" rx="1"/>
       <rect x="80" width="30" height="134" rx="1"/>
-      <rect x="30" y="54" width="50" height="26"/>
+      <!-- Two small H WHITE gaps: left stem open, crossbar off the right stem. -->
+      <rect x="38" y="54" width="34" height="26"/>
     </g>
     <g transform="translate(316 8)">
       <rect width="30" height="134" rx="1"/>

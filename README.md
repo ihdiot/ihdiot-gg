@@ -35,8 +35,9 @@ Niche spotlights are **CSS** (`radial-gradient` cones, `mix-blend-mode`, `--lit`
 
 - **Only room photo:** `assets/moodboard/FIXED1-words-in-niches-lit.png` (the locked master). Not a regenerated desk.
 - Baked niche words are covered; DOM `<a>` labels own Talky / YouTube / Discord / Coach.
-- One hero mark: literal `assets/moodboard/H-WHITE-type-lock.svg` — wide **IHDIOT**, solid-bar H, broken D (stem off the bowl), stadium O, floating T bar. Cool white. Never `idiot`, never `.gg` in the hero, never two marks.
-- Tiny magenta CSS rope on the chair back.
+- One hero mark: literal `assets/moodboard/H-WHITE-type-lock.svg` — wide **IHDIOT**, joined H with two small stem gaps (left stem + crossbar’s right join), broken D (stem off the bowl), stadium O, floating T bar. Cool white. Never `idiot`, never `.gg` in the hero, never two marks.
+- Tiny magenta CSS LED rope on the desk back edge and right shelving — not the chair.
+- Framed poster overlay: being an IHDIOT is a badge of honor (covers baked FOCUS / CREATE / LIVE / REPEAT).
 - Talky → https://ihdiot.github.io/talky-releases/
 - YouTube → `#youtube`
 - Discord → `#discord` (invite stub)
