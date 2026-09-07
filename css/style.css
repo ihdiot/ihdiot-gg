@@ -508,7 +508,7 @@ body.doors-docked .door {
 @media (max-width: 720px) {
   .rail { padding: 0.5rem 0.8rem; }
   .rail-nav a { padding: 0.4rem 0.5rem; font-size: 0.68rem; letter-spacing: 0.1em; }
-  .wordmark { width: min(78%, 520px); }
+  .wordmark { width: min(72%, 560px); }
   .door { min-width: 3.4rem; font-size: 0.56rem; letter-spacing: 0.1em; text-indent: 0.1em; }
   body.doors-docked .door {
     font-size: 0.62rem;
