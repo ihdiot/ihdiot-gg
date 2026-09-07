@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 140" fill="currentColor" aria-hidden="true">
+  <!-- I -->
+  <rect x="6" y="16" width="22" height="108" rx="1"/>
+  <!-- H  split crossbar -->
+  <rect x="78" y="16" width="22" height="108" rx="1"/>
+  <rect x="156" y="16" width="22" height="108" rx="1"/>
+  <rect x="100" y="60" width="20" height="20"/>
+  <rect x="136" y="60" width="20" height="20"/>
+  <!-- D  stem broken from bowl -->
+  <rect x="228" y="16" width="22" height="108" rx="1"/>
+  <path d="M262 22h36c30 0 52 20 52 48s-22 48-52 48h-36v-15h34c21 0 36-13 36-33s-15-33-36-33h-34V22z"/>
+  <!-- I -->
+  <rect x="400" y="16" width="22" height="108" rx="1"/>
+  <!-- O  square-rounded ring -->
+  <path fill-rule="evenodd" d="M470 16h80a40 40 0 0 1 40 40v28a40 40 0 0 1-40 40h-80a40 40 0 0 1-40-40V56a40 40 0 0 1 40-40zm8 20h64a20 20 0 0 1 20 20v28a20 20 0 0 1-20 20h-64a20 20 0 0 1-20-20V56a20 20 0 0 1 20-20z"/>
+  <!-- T  cap detached from stem -->
+  <rect x="646" y="16" width="128" height="22" rx="1"/>
+  <rect x="699" y="48" width="22" height="76" rx="1"/>
+</svg>

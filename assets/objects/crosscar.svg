@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 220" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+  <ellipse class="draw" cx="92" cy="162" rx="38" ry="38"/>
+  <ellipse class="draw" cx="92" cy="162" rx="22" ry="22"/>
+  <ellipse class="draw" cx="318" cy="158" rx="42" ry="42"/>
+  <ellipse class="draw" cx="318" cy="158" rx="24" ry="24"/>
+  <path class="draw" d="M54 150L78 88h92l40-36h86l54 36 42 8v42l-28 12"/>
+  <path class="draw" d="M86 96l28 54M170 62l12 88M248 58v96M332 98l-8 56"/>
+  <path class="draw" d="M78 88h70l18 28H96z"/>
+  <path class="draw" d="M196 56h86l-10 28H214z"/>
+  <path class="draw" d="M48 128h70M300 118h64"/>
+  <path class="draw" d="M210 28h70l8 16H206z"/>
+  <circle class="draw" cx="168" cy="78" r="5"/>
+  <path class="draw" d="M64 168h56M276 166h84"/>
+</svg>

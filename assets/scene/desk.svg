@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="top" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b1618"/>
+      <stop offset=".4" stop-color="#141114"/>
+      <stop offset="1" stop-color="#0c0a0c"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a2226"/>
+      <stop offset="1" stop-color="#090809"/>
+    </linearGradient>
+    <filter id="blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+  <!-- desk plane -->
+  <path d="M140 628L1460 628 1510 718H90Z" fill="url(#top)"/>
+  <path d="M90 718H1510L1496 768H104Z" fill="url(#edge)"/>
+  <path d="M140 628L1460 628" stroke="#ff2bd6" stroke-opacity=".08" stroke-width="1"/>
+  <!-- speaker -->
+  <g transform="translate(430 572)">
+    <rect x="0" y="0" width="46" height="58" rx="4" fill="#121214"/>
+    <circle cx="23" cy="22" r="10" fill="#0a0a0c" stroke="#2a2a30"/>
+    <circle cx="23" cy="44" r="6" fill="#0a0a0c" stroke="#2a2a30"/>
+  </g>
+  <!-- phone -->
+  <rect x="520" y="606" width="22" height="38" rx="3" fill="#151518" transform="rotate(-12 531 625)"/>
+  <!-- headphone stand + cans -->
+  <g transform="translate(1088 500)">
+    <rect x="38" y="70" width="8" height="78" fill="#1a1a20"/>
+    <ellipse cx="42" cy="150" rx="22" ry="6" fill="#121214"/>
+    <path d="M8 62c0-28 16-48 34-48s34 20 34 48" fill="none" stroke="#1c1c22" stroke-width="7"/>
+    <rect x="0" y="58" width="16" height="36" rx="8" fill="#18181e"/>
+    <rect x="68" y="58" width="16" height="36" rx="8" fill="#18181e"/>
+  </g>
+  <!-- monitor stand catch light -->
+  <rect x="748" y="560" width="104" height="10" rx="1" fill="#1a1c22"/>
+  <ellipse cx="800" cy="640" rx="220" ry="18" fill="#ff2bd6" fill-opacity=".05" filter="url(#blur)"/>
+</svg>

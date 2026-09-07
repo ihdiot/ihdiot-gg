@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0c0c10"/>
+      <stop offset=".55" stop-color="#0a0a0d"/>
+      <stop offset="1" stop-color="#070708"/>
+    </linearGradient>
+    <radialGradient id="hot" cx="50%" cy="42%" r="48%">
+      <stop offset="0" stop-color="#1a1520" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#0a0a0d" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="screen" cx="50%" cy="40%" r="70%">
+      <stop offset="0" stop-color="#1c2430"/>
+      <stop offset="1" stop-color="#0b0e14"/>
+    </radialGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="softer" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="28"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#wall)"/>
+  <rect width="1600" height="900" fill="url(#hot)"/>
+  <g stroke="#ffffff" stroke-opacity=".035" fill="none">
+    <path d="M200 0v900M400 0v900M600 0v900M800 0v900M1000 0v900M1200 0v900M1400 0v900"/>
+  </g>
+  <!-- framed print -->
+  <g transform="translate(96 210)">
+    <rect x="0" y="0" width="92" height="168" fill="#101014" stroke="#2a2a30" stroke-width="3"/>
+    <rect x="8" y="8" width="76" height="152" fill="#0c0c10"/>
+    <g fill="#d8d4cc" fill-opacity=".42" font-family="Helvetica, Arial, sans-serif" font-size="9" letter-spacing="2.4">
+      <text x="46" y="44" text-anchor="middle">FOCUS</text>
+      <text x="46" y="72" text-anchor="middle">CREATE</text>
+      <text x="46" y="100" text-anchor="middle">LIVE</text>
+      <text x="46" y="128" text-anchor="middle">REPEAT</text>
+    </g>
+  </g>
+  <!-- snake plant -->
+  <g transform="translate(150 560)" fill="#12161a">
+    <ellipse cx="40" cy="118" rx="36" ry="10" fill="#0a0a0c"/>
+    <path d="M38 118C18 40 8 20 22 8c10 22 16 50 18 110z"/>
+    <path d="M42 118C48 36 70 8 86 18 68 38 54 72 48 118z"/>
+    <path d="M40 118C34 50 20 8 4 22c18 16 28 52 32 96z"/>
+    <rect x="28" y="112" width="24" height="14" rx="2" fill="#16161a"/>
+  </g>
+  <!-- monitor glow + chassis -->
+  <ellipse cx="800" cy="400" rx="280" ry="150" fill="#6ea8ff" fill-opacity=".07" filter="url(#softer)"/>
+  <rect x="628" y="268" width="344" height="228" rx="8" fill="#0e1014" stroke="#1c222a" stroke-width="3"/>
+  <rect x="640" y="280" width="320" height="196" rx="3" fill="url(#screen)"/>
+  <g stroke="#7aa2c8" stroke-opacity=".18" fill="none">
+    <path d="M668 318h80M668 332h54"/>
+    <path d="M668 420h264" stroke-opacity=".1"/>
+    <rect x="668" y="348" width="120" height="54" rx="2" stroke-opacity=".14"/>
+    <rect x="804" y="348" width="120" height="54" rx="2" stroke-opacity=".12"/>
+  </g>
+  <rect x="788" y="496" width="24" height="36" fill="#12141a"/>
+  <rect x="750" y="528" width="100" height="8" rx="1" fill="#16181e"/>
+  <!-- right shelf -->
+  <g transform="translate(1368 200)" fill="#16161c">
+    <rect x="0" y="0" width="160" height="6"/>
+    <rect x="0" y="110" width="160" height="6"/>
+    <rect x="0" y="220" width="160" height="6"/>
+    <rect x="18" y="-70" width="8" height="300" fill="#121218"/>
+    <rect x="134" y="-70" width="8" height="300" fill="#121218"/>
+    <rect x="28" y="-42" width="52" height="36" fill="#101014"/>
+    <rect x="90" y="-38" width="28" height="32" fill="#0e0e12"/>
+    <ellipse cx="48" cy="78" rx="16" ry="22" fill="#151a16"/>
+    <circle cx="118" cy="78" r="14" fill="#ffb060" fill-opacity=".55" filter="url(#soft)"/>
+    <circle cx="118" cy="82" r="7" fill="#ffd9a8"/>
+    <rect x="36" y="186" width="40" height="28" fill="#101014"/>
+    <rect x="86" y="194" width="46" height="20" fill="#0e0e12"/>
+  </g>
+</svg>

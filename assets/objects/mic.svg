@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 340" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+  <rect class="draw" x="64" y="18" width="72" height="118" rx="36"/>
+  <path class="draw" d="M78 40h44M78 58h44M78 76h44M78 94h44"/>
+  <path class="draw" d="M64 78H48c-10 0-16 8-16 18 0 42 30 70 68 70s68-28 68-70c0-10-6-18-16-18h-16"/>
+  <path class="draw" d="M100 166v86"/>
+  <path class="draw" d="M58 252h84"/>
+  <path class="draw" d="M72 252v28M128 252v28"/>
+  <ellipse class="draw" cx="100" cy="292" rx="52" ry="12"/>
+  <ellipse class="draw" cx="100" cy="308" rx="64" ry="14"/>
+  <path class="draw" d="M36 200c-18 10-28 28-22 46"/>
+</svg>
