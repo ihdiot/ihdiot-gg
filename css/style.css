@@ -275,24 +275,25 @@ body.doors-docked .door {
 /* Covers baked 3D Talky/YouTube/Discord/Coach so DOM <a> labels own the words. */
 .plate {
   position: absolute;
-  left: -6%;
-  right: -6%;
-  bottom: -1.5%;
-  height: 40%;
+  left: -8%;
+  right: -8%;
+  bottom: -2%;
+  height: 48%;
   z-index: 2;
   background:
     linear-gradient(to top,
-      rgba(12, 9, 7, 0.99) 0%,
-      rgba(18, 12, 8, 0.97) 48%,
-      rgba(20, 13, 8, 0.72) 78%,
-      rgba(16, 10, 7, 0.18) 100%);
+      rgb(11, 8, 6) 0%,
+      rgb(13, 9, 7) 58%,
+      rgba(14, 10, 7, 0.98) 78%,
+      rgba(14, 10, 7, 0.55) 92%,
+      rgba(14, 10, 7, 0.0) 100%);
   box-shadow: inset 0 18px 22px -12px rgba(255, 180, 80, calc(0.45 * var(--lit)));
 }
 .niche[data-door="youtube"] .plate,
 .niche[data-door="discord"] .plate {
-  left: -10%;
-  right: -10%;
-  height: 42%;
+  left: -14%;
+  right: -14%;
+  height: 50%;
 }
 
 /* Tiny magenta accent — chair back only. */
