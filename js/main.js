@@ -1,4 +1,4 @@
-/* IHDIOT — FIXED1 photo + real CSS niche lights. Pin +=100% (~200vh). */
+/* IHDIOT — FIXED1-v2 still + clipped CSS niche lights. Pin +=100% (~200vh). */
 (() => {
   const html = document.documentElement;
   const hero = document.querySelector(".hero");
@@ -10,19 +10,19 @@
   const motionOK = html.classList.contains("motion") && window.gsap && window.ScrollTrigger;
 
   const NICHES = [
-    { left: 0.247, w: 0.084 },
-    { left: 0.380, w: 0.100 },
-    { left: 0.520, w: 0.100 },
-    { left: 0.669, w: 0.084 },
+    { left: 0.297, w: 0.073 },
+    { left: 0.405, w: 0.073 },
+    { left: 0.512, w: 0.073 },
+    { left: 0.621, w: 0.073 },
   ];
-  const NICHE_TOP = 0.082;
-  const NICHE_H = 0.27;
-  const IMG_W = 1536;
-  const IMG_H = 1024;
+  const NICHE_TOP = 0.054;
+  const NICHE_H = 0.258;
+  const IMG_W = 1024;
+  const IMG_H = 683;
   const POS_X = 0.5;
-  const POS_Y = 0.28;
-  const SPAN_L = 0.215;
-  const SPAN_R = 0.790;
+  const POS_Y = 0.12;
+  const SPAN_L = 0.27;
+  const SPAN_R = 0.73;
 
   const year = document.querySelector("#year");
   if (year) year.textContent = new Date().getFullYear();
@@ -127,10 +127,14 @@
   const cue = hero.querySelector(".scroll-cue");
   const veil = hero.querySelector(".veil");
   const photo = hero.querySelector("[data-depth='photo']");
+  const monitor = hero.querySelector("[data-monitor]");
+  const wordmark = hero.querySelector(".wordmark");
 
   gsap.set(niches, { "--lit": 0 });
   gsap.set(doors, { "--lit": 0 });
   gsap.set(veil, { opacity: 1 });
+  gsap.set(monitor, { "--wake": 0.12 });
+  gsap.set(wordmark, { autoAlpha: 0.22, y: 8, scale: 0.986 });
 
   const doorLayer = hero.querySelector(".doors");
   document.body.appendChild(doorLayer);
@@ -161,6 +165,10 @@
     tl.to(niches[index], { "--lit": 1, duration: 16, ease: "power1.out" }, at);
     tl.to(doors[index], { "--lit": 1, duration: 16, ease: "power1.out" }, at);
   }
+
+  // Monitor wake first: fade-up / glow / settle, then niche lights.
+  tl.to(monitor, { "--wake": 1, duration: 10, ease: "power1.out" }, 0);
+  tl.to(wordmark, { autoAlpha: 1, y: 0, scale: 1, duration: 10, ease: "power2.out" }, 0);
 
   // Scroll A 0–32: Talky, then YouTube. Mid A (16) = Talky only.
   lightDoor(0, 0);

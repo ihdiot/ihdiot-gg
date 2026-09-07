@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1070 150" role="img">
   <title>IHDIOT — H WHITE type lock</title>
-  <g fill="#111">
+  <g fill="#eef2f6">
     <g transform="translate(16 8)"><rect width="30" height="134" rx="1"/></g>
     <g transform="translate(124 8)">
+      <!-- Left stem detached. Crossbar joins the right stem. -->
       <rect width="30" height="134" rx="1"/>
+      <rect x="42" y="54" width="68" height="26" rx="1"/>
       <rect x="80" width="30" height="134" rx="1"/>
-      <!-- Two small H WHITE gaps: left stem open, crossbar off the right stem. -->
-      <rect x="42" y="54" width="26" height="26"/>
     </g>
     <g transform="translate(316 8)">
       <rect width="30" height="134" rx="1"/>

@@ -100,8 +100,8 @@ img { display: block; max-width: 100%; }
 }
 body.doors-docked .door {
   font-size: 0.8rem;
-  letter-spacing: 0.18em;
-  text-indent: 0.18em;
+  letter-spacing: 0.2em;
+  text-indent: 0.2em;
   min-height: 2rem;
   transform: translate(-50%, 0);
 }
@@ -152,67 +152,67 @@ body.doors-docked .door {
   z-index: 3;
 }
 
-/* Soft wall patch so the baked orange channel letters never read as the mark. */
-.mark-cover {
+/* Monitor glass — wordmark lives here. No opaque plate. */
+.monitor {
+  --wake: 0;
   position: absolute;
-  left: 30.2%;
-  top: 35.6%;
-  width: 39.6%;
-  height: 15.2%;
+  left: 32.4%;
+  top: 43.8%;
+  width: 34.6%;
+  height: 16.8%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 4;
+}
+.screen-wake {
+  position: absolute;
+  inset: 0;
   background:
-    linear-gradient(to bottom,
-      transparent 0%,
-      rgba(11, 9, 8, 0.88) 16%,
-      rgba(10, 8, 7, 0.97) 48%,
-      rgba(11, 9, 8, 0.88) 84%,
-      transparent 100%),
-    radial-gradient(ellipse 82% 78% at 50% 50%,
-      rgba(12, 9, 8, 0.96) 0%,
-      rgba(11, 9, 8, 0.78) 58%,
-      rgba(10, 8, 7, 0.28) 78%,
-      transparent 90%);
+    radial-gradient(ellipse 72% 58% at 50% 46%,
+      rgba(214, 228, 242, calc(0.16 * var(--wake))) 0%,
+      rgba(186, 206, 228, calc(0.06 * var(--wake))) 42%,
+      transparent 74%);
+  mix-blend-mode: screen;
+  pointer-events: none;
 }
 
 .wordmark {
   position: absolute;
   left: 50%;
-  top: 42.6%;
-  width: min(54%, 740px);
+  top: 48%;
+  width: 84%;
   margin: 0;
   transform: translate(-50%, -50%);
   color: #eef2f6;
   filter:
-    drop-shadow(0 0 0.5px rgba(238, 242, 246, 0.45))
-    drop-shadow(0 0 10px rgba(200, 214, 230, 0.16));
+    drop-shadow(0 0 0.6px rgba(238, 242, 246, calc(0.28 + 0.4 * var(--wake))))
+    drop-shadow(0 0 calc(8px + 10px * var(--wake)) rgba(196, 214, 232, calc(0.1 + 0.28 * var(--wake))));
 }
 .wordmark-img {
   display: block;
   width: 100%;
   height: auto;
-  /* Lock file is #111; invert so the hero reads cool white. */
-  filter: invert(1);
 }
 
-/* Image-space niche boxes (1536×1024 FIXED1). */
+/* Image-space niche boxes (1024×683 FIXED1-v2). Overflow clips cones to the insets. */
 .niches { position: absolute; inset: 0; }
 .niche {
   --lit: 0;
   position: absolute;
-  top: 8.2%;
-  width: 8.4%;
-  height: 27%;
-  overflow: visible;
+  top: 5.4%;
+  width: 7.3%;
+  height: 25.8%;
+  overflow: hidden;
 }
-.niche[data-door="talky"]   { left: 24.7%; }
-.niche[data-door="youtube"] { left: 38.0%; width: 10.0%; }
-.niche[data-door="discord"] { left: 52.0%; width: 10.0%; }
-.niche[data-door="coach"]   { left: 66.9%; }
+.niche[data-door="talky"]   { left: 29.7%; }
+.niche[data-door="youtube"] { left: 40.5%; }
+.niche[data-door="discord"] { left: 51.2%; }
+.niche[data-door="coach"]   { left: 62.1%; }
 
-/* Shade stays in the recess; cones may bloom softly past the box (no hard clip). */
 .fixture {
   position: absolute;
   inset: 0;
-  overflow: visible;
+  overflow: hidden;
   pointer-events: none;
 }
 
@@ -225,29 +225,30 @@ body.doors-docked .door {
   pointer-events: none;
 }
 
-/* Real CSS fixture — not a PNG. */
+/* Real CSS fixture — not a PNG. Stays inside the clipped niche. */
 .bulb {
   position: absolute;
   left: 50%;
-  top: -6%;
-  width: 56%;
-  height: 20%;
+  top: 0;
+  width: 52%;
+  height: 16%;
   transform: translateX(-50%);
-  background: radial-gradient(circle at 50% 40%,
+  background: radial-gradient(circle at 50% 35%,
     rgba(255, 236, 190, 0.7) 0%,
     rgba(255, 176, 70, 0.28) 46%,
     transparent 78%);
   mix-blend-mode: screen;
   opacity: var(--lit);
-  filter: blur(8px);
+  filter: blur(7px);
 }
 
-/* Soft volumetric cones — layered radials + blur. No clip-path triangles, no PNGs. */
+/* Soft volumetric cones — layered radials + blur, clipped by .niche overflow. */
 .cone {
   position: absolute;
-  inset: -28% auto auto 50%;
-  width: 280%;
-  height: 155%;
+  left: 50%;
+  top: 0;
+  width: 150%;
+  height: 108%;
   transform: translateX(-50%);
   background:
     radial-gradient(ellipse 58% 22% at 50% 6%,
@@ -261,7 +262,7 @@ body.doors-docked .door {
       transparent 86%);
   mix-blend-mode: screen;
   opacity: var(--lit);
-  filter: blur(20px);
+  filter: blur(16px);
   pointer-events: none;
 }
 .cone::before,
@@ -277,19 +278,19 @@ body.doors-docked .door {
     rgba(255, 240, 210, 0.55) 0%,
     rgba(255, 206, 130, 0.12) 48%,
     transparent 78%);
-  filter: blur(12px);
+  filter: blur(10px);
 }
 .cone::after {
   background: radial-gradient(ellipse 110% 120% at 50% 22%,
     rgba(255, 176, 80, 0.14) 0%,
     rgba(255, 150, 50, 0.04) 50%,
     transparent 80%);
-  filter: blur(28px);
+  filter: blur(18px);
 }
 
 .wash {
   position: absolute;
-  inset: 0% -10% -14%;
+  inset: 0;
   background:
     radial-gradient(ellipse 100% 88% at 50% 16%,
       rgba(255, 206, 130, 0.32),
@@ -297,137 +298,7 @@ body.doors-docked .door {
       transparent 80%);
   mix-blend-mode: screen;
   opacity: var(--lit);
-  filter: blur(12px);
-}
-
-/* Covers baked 3D Talky/YouTube/Discord/Coach so DOM <a> labels own the words. */
-.plate {
-  position: absolute;
-  left: -8%;
-  right: -8%;
-  bottom: -2%;
-  height: 48%;
-  z-index: 2;
-  background:
-    linear-gradient(to top,
-      rgb(11, 8, 6) 0%,
-      rgb(13, 9, 7) 58%,
-      rgba(14, 10, 7, 0.98) 78%,
-      rgba(14, 10, 7, 0.55) 92%,
-      rgba(14, 10, 7, 0.0) 100%);
-  box-shadow: inset 0 18px 22px -12px rgba(255, 180, 80, calc(0.45 * var(--lit)));
-}
-.niche[data-door="youtube"] .plate,
-.niche[data-door="discord"] .plate {
-  left: -14%;
-  right: -14%;
-  height: 50%;
-}
-
-/* Hide the baked magenta blob on the chair mesh. CSS rope lives on desk/shelf only. */
-.chair-patch {
-  position: absolute;
-  left: 43.2%;
-  top: 58.0%;
-  width: 13.8%;
-  height: 8.6%;
-  border-radius: 50%;
-  background: radial-gradient(ellipse 72% 62% at 50% 40%,
-    rgb(26, 13, 8) 0%,
-    rgba(20, 11, 8, 0.94) 42%,
-    rgba(14, 9, 7, 0.5) 66%,
-    transparent 80%);
-  pointer-events: none;
-}
-
-/* Tiny magenta LED rope — thin line + glow. Desk back edge + right shelving. Not the chair. */
-.neon { position: absolute; inset: 0; pointer-events: none; }
-.neon-desk,
-.neon-shelf,
-.neon-shelf-lip {
-  position: absolute;
-  background: #ff7ae6;
-  border-radius: 999px;
-  mix-blend-mode: screen;
-  pointer-events: none;
-  box-shadow:
-    0 0 2px 0.5px rgba(255, 186, 236, 0.95),
-    0 0 8px 1.5px rgba(255, 79, 216, 0.7),
-    0 0 18px 4px rgba(255, 79, 216, 0.28);
-}
-.neon-desk--left {
-  left: 21.4%;
-  top: 54.6%;
-  width: 14.2%;
-  height: 2px;
-  opacity: 0.55;
-}
-.neon-desk--right {
-  left: 63.6%;
-  top: 54.6%;
-  width: 13.4%;
-  height: 2px;
-  opacity: 0.5;
-}
-.neon-shelf {
-  left: 86.8%;
-  top: 27.5%;
-  width: 2px;
-  height: 46%;
-  opacity: 0.48;
-}
-.neon-shelf-lip {
-  left: 86.8%;
-  top: 44.6%;
-  width: 8.4%;
-  height: 2px;
-  opacity: 0.4;
-}
-
-/* Cover baked FOCUS / CREATE / LIVE / REPEAT with a tasteful IHDIOT plate. */
-.poster {
-  position: absolute;
-  left: 6.05%;
-  top: 25.4%;
-  width: 9.15%;
-  height: 14.6%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.28em;
-  padding: 0.35em 0.4em 0.45em;
-  background:
-    linear-gradient(to bottom,
-      rgba(8, 7, 6, 0) 0%,
-      rgba(8, 7, 6, 0.94) 10%,
-      rgba(7, 6, 5, 0.98) 88%,
-      rgba(8, 7, 6, 0) 100%);
-  color: #d4cfc6;
-  text-align: center;
-  letter-spacing: 0.14em;
-  text-indent: 0.14em;
-  pointer-events: none;
-}
-.poster-kicker,
-.poster-line {
-  margin: 0;
-  font-size: clamp(0.34rem, 0.72vw, 0.58rem);
-  font-weight: 500;
-  line-height: 1.25;
-  letter-spacing: 0.16em;
-  text-indent: 0.16em;
-  text-transform: lowercase;
-  opacity: 0.82;
-}
-.poster-mark {
-  margin: 0.08em 0 0.12em;
-  font-size: clamp(0.48rem, 1.05vw, 0.86rem);
-  font-weight: 700;
-  letter-spacing: 0.28em;
-  text-indent: 0.28em;
-  text-transform: uppercase;
-  color: #ece8e0;
+  filter: blur(10px);
 }
 
 .doors {
@@ -448,38 +319,29 @@ body.doors-docked .door {
   min-height: 2.3rem;
   padding: 0.15rem 0.45rem 0.25rem;
   transform: translate(-50%, -100%);
-  color: rgba(246, 242, 236, calc(0.1 + 0.9 * var(--lit)));
+  color: rgba(246, 242, 236, calc(0.12 + 0.88 * var(--lit)));
   font-size: clamp(0.66rem, 1.22vw, 1.05rem);
-  font-weight: 800;
-  letter-spacing: 0.28em;
-  text-indent: 0.28em;
+  font-weight: 700;
+  letter-spacing: 0.34em;
+  text-indent: 0.34em;
   text-decoration: none;
   white-space: nowrap;
   pointer-events: auto;
   text-shadow:
-    0 2px 3px rgba(0, 0, 0, calc(0.55 + 0.35 * var(--lit))),
-    0 6px 16px rgba(0, 0, 0, calc(0.28 + 0.32 * var(--lit))),
-    0 0 calc(8px + 16px * var(--lit)) rgba(255, 214, 150, calc(0.08 + 0.55 * var(--lit))),
-    0 0 calc(20px + 28px * var(--lit)) rgba(255, 176, 80, calc(0.04 + 0.28 * var(--lit)));
+    0 1px 0 rgba(255, 236, 210, calc(0.18 * var(--lit))),
+    0 -1px 0 rgba(0, 0, 0, calc(0.35 + 0.2 * var(--lit))),
+    0 2px 3px rgba(0, 0, 0, calc(0.55 + 0.3 * var(--lit))),
+    0 6px 16px rgba(0, 0, 0, calc(0.28 + 0.3 * var(--lit))),
+    0 0 calc(10px + 18px * var(--lit)) rgba(255, 214, 150, calc(0.08 + 0.58 * var(--lit))),
+    0 0 calc(22px + 30px * var(--lit)) rgba(255, 176, 80, calc(0.04 + 0.3 * var(--lit)));
   filter: drop-shadow(0 3px 8px rgba(0, 0, 0, calc(0.25 + 0.35 * var(--lit))));
-}
-.door::after {
-  content: "";
-  position: absolute;
-  left: 16%;
-  right: 16%;
-  bottom: 0.08rem;
-  height: 1px;
-  background: rgba(255, 208, 140, calc(0.08 + 0.7 * var(--lit)));
-  box-shadow: 0 0 10px 1px rgba(255, 190, 110, calc(0.55 * var(--lit)));
-  opacity: var(--lit);
-  pointer-events: none;
 }
 .door:hover,
 .door:focus-visible {
   color: #fff;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.38em;
   text-shadow:
+    0 1px 0 rgba(255, 240, 220, 0.28),
     0 2px 4px rgba(0, 0, 0, 0.7),
     0 0 18px rgba(255, 220, 160, 0.92),
     0 0 32px rgba(255, 190, 100, 0.45);
@@ -511,6 +373,7 @@ body.doors-docked .door {
 .static .veil { background: rgba(4, 3, 3, 0.18); }
 .static .niche,
 .static .door { --lit: 1; }
+.static .monitor { --wake: 1; }
 .static .rail,
 .static .rail.is-on {
   background: rgba(7, 6, 5, 0.78);
@@ -645,12 +508,12 @@ body.doors-docked .door {
 @media (max-width: 720px) {
   .rail { padding: 0.5rem 0.8rem; }
   .rail-nav a { padding: 0.4rem 0.5rem; font-size: 0.68rem; letter-spacing: 0.1em; }
-  .wordmark { width: min(72%, 560px); }
-  .door { min-width: 3.4rem; font-size: 0.56rem; letter-spacing: 0.1em; text-indent: 0.1em; }
+  .wordmark { width: 90%; }
+  .door { min-width: 3.4rem; font-size: 0.56rem; letter-spacing: 0.16em; text-indent: 0.16em; }
   body.doors-docked .door {
     font-size: 0.62rem;
-    letter-spacing: 0.06em;
-    text-indent: 0.06em;
+    letter-spacing: 0.08em;
+    text-indent: 0.08em;
     min-width: 0;
     padding: 0.2rem 0.15rem;
   }
@@ -660,11 +523,6 @@ body.doors-docked .door {
   .panel__head { flex-direction: column; align-items: start; gap: 0.6rem; }
   .video-grid { grid-template-columns: 1fr; }
   .site-footer__inner { flex-direction: column; align-items: start; }
-  .neon-desk--left { width: 18%; left: 18%; }
-  .neon-desk--right { width: 16%; left: 64%; }
-  .neon-shelf { height: 40%; left: 88%; }
-  .poster { width: 12.4%; left: 4.6%; }
-  .poster-mark { letter-spacing: 0.18em; text-indent: 0.18em; }
 }
 
 @media (prefers-reduced-motion: reduce) {

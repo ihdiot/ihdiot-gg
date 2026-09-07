@@ -22,7 +22,7 @@ Hero is pinned for **+=100%** (~200vh total, inside the 180–220vh cap). Lights
 
 | Beat | What you should see |
 | --- | --- |
-| Open | Dim room. One cool-white **IHDIOT**. Niches dark. |
+| Open | Dim room. Monitor wake starting — cool-white **IHDIOT** on the glass. Niches dark. |
 | Scroll A · half | **Talky** niche only |
 | Scroll A · full | Talky + **YouTube** (L→R) |
 | Scroll B · half | **Discord** joins |
@@ -33,11 +33,11 @@ Niche spotlights are **CSS** (`radial-gradient` cones, `mix-blend-mode`, `--lit`
 
 ## Room / type / doors
 
-- **Only room photo:** `assets/moodboard/FIXED1-words-in-niches-lit.png` (the locked master). Not a regenerated desk.
-- Baked niche words are covered; DOM `<a>` labels own Talky / YouTube / Discord / Coach.
-- One hero mark: literal `assets/moodboard/H-WHITE-type-lock.svg` — wide **IHDIOT**, joined H with two small stem gaps (left stem + crossbar’s right join), broken D (stem off the bowl), stadium O, floating T bar. Cool white. Never `idiot`, never `.gg` in the hero, never two marks.
-- Tiny magenta CSS LED rope on the desk back edge and right shelving — not the chair.
-- Framed poster overlay: being an IHDIOT is a badge of honor (covers baked FOCUS / CREATE / LIVE / REPEAT).
+- **Only room photo:** `assets/moodboard/FIXED1-v2-badge-neon.png`. Old FIXED1 stays in moodboard as unused archive.
+- One hero mark on the monitor glass: `assets/moodboard/H-WHITE-type-lock.svg` — cool-white **IHDIOT**. H has a detached left stem; the crossbar joins the right stem. D stem off the bowl. T bar off the stem. Never `idiot`, never `.gg`, never two marks.
+- Niche cones are clipped with `overflow: hidden` on the inset boxes. No plates, no mark-cover, no poster overlay, no chair neon hide.
+- Magenta neon is baked into the still. No CSS rope on the chair or climbing the monitor.
+- Door labels are tracked type + glow only (no underline). Talky / YouTube / Discord / Coach stay real `<a>`s.
 - Talky → https://ihdiot.github.io/talky-releases/
 - YouTube → `#youtube`
 - Discord → `#discord` (invite stub)
