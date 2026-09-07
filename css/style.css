@@ -229,17 +229,17 @@ body.doors-docked .door {
 .bulb {
   position: absolute;
   left: 50%;
-  top: -2%;
-  width: 42%;
-  height: 14%;
+  top: -6%;
+  width: 56%;
+  height: 20%;
   transform: translateX(-50%);
   background: radial-gradient(circle at 50% 40%,
-    rgba(255, 236, 190, 1) 0%,
-    rgba(255, 176, 70, 0.55) 46%,
-    transparent 72%);
+    rgba(255, 236, 190, 0.7) 0%,
+    rgba(255, 176, 70, 0.28) 46%,
+    transparent 78%);
   mix-blend-mode: screen;
   opacity: var(--lit);
-  filter: blur(1.5px);
+  filter: blur(8px);
 }
 
 /* Soft volumetric cones — layered radials + blur. No clip-path triangles, no PNGs. */
