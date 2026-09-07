@@ -356,18 +356,18 @@ body.doors-docked .door {
     0 0 18px 4px rgba(255, 79, 216, 0.28);
 }
 .neon-desk--left {
-  left: 21.8%;
-  top: 59.0%;
-  width: 15.6%;
+  left: 21.4%;
+  top: 54.6%;
+  width: 14.2%;
   height: 2px;
-  opacity: 0.58;
+  opacity: 0.55;
 }
 .neon-desk--right {
-  left: 62.2%;
-  top: 59.0%;
-  width: 14.8%;
+  left: 63.6%;
+  top: 54.6%;
+  width: 13.4%;
   height: 2px;
-  opacity: 0.52;
+  opacity: 0.5;
 }
 .neon-shelf {
   left: 86.8%;
