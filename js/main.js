@@ -60,12 +60,13 @@
   }
 
   function railPoint(i) {
-    const groupW = Math.min(innerWidth * 0.58, 560);
-    const right = innerWidth - 20;
-    const left = right - groupW;
+    const narrow = innerWidth < 720;
+    const pad = narrow ? 10 : 20;
+    const groupW = narrow ? innerWidth - pad * 2 : Math.min(innerWidth * 0.58, 560);
+    const left = narrow ? pad : innerWidth - pad - groupW;
     return {
       x: left + (groupW * (i + 0.5)) / 4,
-      y: 28,
+      y: narrow ? 16 : 18,
     };
   }
 
@@ -107,13 +108,13 @@
   gsap.set(beams, { opacity: 0 });
   gsap.set(pools, { opacity: 0 });
   gsap.set(doors, { "--lit": 0 });
-  gsap.set(wordmark, { opacity: 0.2 });
+  gsap.set(wordmark, { opacity: 0.08 });
   gsap.set(veil, { opacity: 1 });
 
   const doorLayer = hero.querySelector(".doors");
-  doorLayer.style.position = "fixed";
-  doorLayer.style.inset = "0";
-  doorLayer.style.zIndex = "35";
+  // Pin applies a transform, which would trap position:fixed. Live on <body> instead.
+  document.body.appendChild(doorLayer);
+  doorLayer.classList.add("is-floating");
 
   placeDoorsAtNiches();
 
@@ -122,7 +123,10 @@
     scrollTrigger: {
       trigger: hero,
       start: "top top",
-      end: "bottom bottom",
+      end: "+=120%",
+      pin: true,
+      pinSpacing: true,
+      anticipatePin: 1,
       scrub: 0.45,
       invalidateOnRefresh: true,
       onUpdate(self) {
@@ -142,8 +146,8 @@
   // Scroll A 0–36: Talky then YouTube. Halfway A (18) = Talky only.
   lightPair(0, 0);
   lightPair(1, 18);
-  tl.to(wordmark, { opacity: 0.72, duration: 36 }, 0);
-  tl.to(veil, { opacity: 0.55, duration: 36 }, 0);
+  tl.to(wordmark, { opacity: 0.55, duration: 36 }, 0);
+  tl.to(veil, { opacity: 0.62, duration: 36 }, 0);
   tl.to(cue, { autoAlpha: 0, duration: 10 }, 2);
 
   // Scroll B 36–72: Discord then Coach.
@@ -212,7 +216,42 @@
   });
 
   const plate = hero.querySelector(".layer-wall img");
-  const reveal = () => gsap.fromTo(".room", { opacity: 0 }, { opacity: 1, duration: 0.9, ease: "power2.out" });
+  const reveal = () => gsap.fromTo(".room", { opacity: 0 }, { opacity: 1, duration: 0.55, ease: "power2.out" });
   if (plate && plate.complete) reveal();
   else if (plate) plate.addEventListener("load", reveal, { once: true });
+
+  function goToProgress(p) {
+    const st = tl.scrollTrigger;
+    if (!st) return false;
+    ScrollTrigger.refresh();
+    const span = st.end - st.start;
+    if (!(span > 40)) return false;
+    const y = st.start + span * Math.max(0, Math.min(1, p));
+    window.scrollTo(0, y);
+    st.scroll(y);
+    ScrollTrigger.update();
+    html.dataset.progress = String(Math.round(st.progress * 100));
+    return true;
+  }
+
+  window.__heroGo = goToProgress;
+  window.__heroProgress = () => (tl.scrollTrigger ? tl.scrollTrigger.progress : 0);
+
+  const beats = { open: 0, "a-mid": 0.18, "a-end": 0.36, "b-end": 0.72, "c-dock": 0.97 };
+  const wanted = new URLSearchParams(location.search).get("beat");
+  if (wanted in beats) {
+    const start = () => {
+      let n = 0;
+      const tick = () => {
+        if (goToProgress(beats[wanted]) || n++ > 40) {
+          html.dataset.beat = wanted;
+          return;
+        }
+        setTimeout(tick, 50);
+      };
+      tick();
+    };
+    if (document.readyState === "complete") setTimeout(start, 80);
+    else addEventListener("load", () => setTimeout(start, 80), { once: true });
+  }
 })();

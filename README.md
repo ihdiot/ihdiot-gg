@@ -26,7 +26,7 @@ python3 -m http.server 8080
 
 ## Scroll map (~220vh total, not 360%+)
 
-The hero stage is one sticky viewport inside a **220vh** track. Lights start on the first pixels of scroll — no long dead stretch.
+The hero is pinned for **+=120%** (~220vh total, not 360%+). Lights start on the first pixels of scroll — no long dead stretch.
 
 | Beat | Track | What happens |
 | --- | --- | --- |

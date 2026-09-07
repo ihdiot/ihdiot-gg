@@ -96,17 +96,18 @@ img { display: block; max-width: 100%; }
 
 /* Motion: the live doors are the niche <a>s (they dock themselves). */
 .js.motion .rail-nav { display: none !important; }
-.js.motion .doors {
+.js.motion .doors,
+.doors.is-floating {
   position: fixed;
   inset: 0;
   z-index: 45;
 }
 body.doors-docked .door {
-  font-size: 0.78rem;
-  letter-spacing: 0.16em;
-  text-indent: 0.16em;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-indent: 0.18em;
   min-height: 2rem;
-  transform: translate(-50%, -40%);
+  transform: translate(-50%, 0);
 }
 
 /* ------------------------------------------------------------------ hero */
@@ -117,14 +118,6 @@ body.doors-docked .door {
   overflow: hidden;
   isolation: isolate;
   background: var(--void);
-}
-.js.motion .hero { height: var(--hero-h); }
-.js.motion .hero-stage {
-  position: sticky;
-  top: 0;
-  height: 100svh;
-  min-height: 560px;
-  overflow: hidden;
 }
 .hero-stage { position: relative; height: 100%; }
 
@@ -173,10 +166,9 @@ body.doors-docked .door {
   margin: 0;
   transform: translate(-50%, -50%);
   filter:
-    drop-shadow(0 0 6px rgba(255, 178, 74, 0.55))
-    drop-shadow(0 0 22px rgba(255, 138, 26, 0.45))
-    drop-shadow(0 0 48px rgba(255, 120, 20, 0.28));
-  opacity: 0.22;
+    drop-shadow(0 0 4px rgba(255, 178, 74, 0.35))
+    drop-shadow(0 0 16px rgba(255, 138, 26, 0.22));
+  opacity: 0.1;
 }
 .wordmark svg { display: block; width: 100%; height: auto; }
 
@@ -200,16 +192,16 @@ body.doors-docked .door {
 .beam {
   position: absolute;
   inset: 0 auto auto 50%;
-  width: 150%;
-  height: 100%;
+  width: 170%;
+  height: 118%;
   transform: translateX(-50%);
   background:
-    radial-gradient(ellipse 70% 28% at 50% 0%, rgba(255, 210, 120, 0.95) 0%, rgba(255, 160, 50, 0.0) 72%),
+    radial-gradient(ellipse 80% 26% at 50% 0%, rgba(255, 220, 140, 1) 0%, rgba(255, 160, 50, 0) 70%),
     linear-gradient(to bottom,
-      rgba(255, 176, 70, 0.72) 0%,
-      rgba(255, 140, 40, 0.18) 48%,
-      rgba(255, 168, 70, 0.08) 100%);
-  clip-path: polygon(28% 0, 72% 0, 100% 100%, 0 100%);
+      rgba(255, 186, 80, 0.88) 0%,
+      rgba(255, 150, 45, 0.28) 42%,
+      rgba(255, 170, 70, 0.12) 100%);
+  clip-path: polygon(30% 0, 70% 0, 100% 100%, 0 100%);
   mix-blend-mode: screen;
   opacity: var(--lit);
 }
@@ -236,8 +228,8 @@ body.doors-docked .door {
   min-width: 6.5rem;
   min-height: 2.4rem;
   padding: 0.15rem 0.35rem 0.2rem;
-  transform: translate(-50%, -90%);
-  color: rgba(244, 239, 230, calc(0.18 + 0.82 * var(--lit)));
+  transform: translate(-50%, -100%);
+  color: rgba(244, 239, 230, calc(0.08 + 0.92 * var(--lit)));
   font-size: clamp(0.62rem, 1.15vw, 0.95rem);
   font-weight: 700;
   letter-spacing: 0.22em;
@@ -376,7 +368,14 @@ body.doors-docked .door {
   .rail { padding: 0.5rem 0.8rem; }
   .rail-nav a { padding: 0.4rem 0.5rem; font-size: 0.68rem; letter-spacing: 0.1em; }
   .wordmark { width: min(72%, 420px); top: 36%; }
-  .door { min-width: 4.2rem; font-size: 0.58rem; letter-spacing: 0.12em; text-indent: 0.12em; }
+  .door { min-width: 3.4rem; font-size: 0.58rem; letter-spacing: 0.1em; text-indent: 0.1em; }
+  body.doors-docked .door {
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    text-indent: 0.06em;
+    min-width: 0;
+    padding: 0.2rem 0.15rem;
+  }
   .scroll-cue { right: 0.8rem; bottom: 0.8rem; }
   .panel { padding: 4.5rem 0; }
   .panel__grid { grid-template-columns: 1fr; gap: 1.8rem; align-items: start; }
