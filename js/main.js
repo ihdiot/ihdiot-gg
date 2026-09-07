@@ -108,7 +108,7 @@
   gsap.set(beams, { opacity: 0 });
   gsap.set(pools, { opacity: 0 });
   gsap.set(doors, { "--lit": 0 });
-  gsap.set(wordmark, { opacity: 0.08 });
+  gsap.set(wordmark, { opacity: 0.42 });
   gsap.set(veil, { opacity: 1 });
 
   const doorLayer = hero.querySelector(".doors");
@@ -146,7 +146,7 @@
   // Scroll A 0–36: Talky then YouTube. Halfway A (18) = Talky only.
   lightPair(0, 0);
   lightPair(1, 18);
-  tl.to(wordmark, { opacity: 0.55, duration: 36 }, 0);
+  tl.to(wordmark, { opacity: 0.78, duration: 36 }, 0);
   tl.to(veil, { opacity: 0.62, duration: 36 }, 0);
   tl.to(cue, { autoAlpha: 0, duration: 10 }, 2);
 
@@ -155,7 +155,7 @@
   lightPair(3, 54);
   tl.to(wordmark, { opacity: 1, duration: 36 }, 36);
   tl.to(veil, { opacity: 0.18, duration: 36 }, 36);
-  tl.to(".layer-neon", { opacity: 0.7, duration: 36 }, 36);
+  tl.to(".layer-neon", { opacity: 0.45, duration: 36 }, 36);
 
   // Scroll C 72–100: restrained depth + dock words to the top rail.
   tl.to(layers.wall, { y: -14, scale: 1.02, duration: 28, ease: "power1.inOut" }, 72);
