@@ -182,11 +182,12 @@
     tl.to(
       wordmark,
       {
-        left: 22,
-        top: 18,
+        left: () => (innerWidth < 720 ? 12 : 22),
+        top: () => (innerWidth < 720 ? 14 : 18),
         xPercent: 0,
         yPercent: 0,
-        width: 132,
+        y: 0,
+        width: () => (innerWidth < 720 ? 98 : 136),
         duration: 10,
         ease: "power2.inOut",
       },
@@ -215,5 +216,21 @@
 
     // 96–100 hold
     tl.to({}, { duration: 4 }, 96);
+
+    const beats = { enter: 0, unseal: 0.16, neon: 0.26, chapter: 0.36, doors: 0.73, dock: 0.94 };
+    const wanted = new URLSearchParams(location.search).get("beat");
+    if (wanted != null && beats[wanted] != null) {
+      const seek = () => {
+        const st = ScrollTrigger.getAll()[0];
+        if (!st) return;
+        window.scrollTo(0, st.start + (st.end - st.start) * beats[wanted]);
+        ScrollTrigger.update();
+      };
+      requestAnimationFrame(() => {
+        ScrollTrigger.refresh();
+        seek();
+        requestAnimationFrame(seek);
+      });
+    }
   }
 })();

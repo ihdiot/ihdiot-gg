@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
   <defs>
     <linearGradient id="mesh" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#2a2a30"/>
-      <stop offset="1" stop-color="#141418"/>
+      <stop offset="0" stop-color="#4a4a54"/>
+      <stop offset="1" stop-color="#24242c"/>
     </linearGradient>
     <pattern id="grid" width="8" height="8" patternUnits="userSpaceOnUse">
-      <path d="M8 0H0V8" fill="none" stroke="#3a3a42" stroke-width=".6"/>
+      <path d="M8 0H0V8" fill="none" stroke="#6a6a76" stroke-width=".7"/>
     </pattern>
   </defs>
   <!-- base (under desk, hinted) -->
@@ -15,20 +15,20 @@
     <path d="M800 706L730 748M800 706L870 748M800 706L800 760" stroke="#161618" stroke-width="8" stroke-linecap="round"/>
   </g>
   <!-- seat -->
-  <path d="M716 596c12-16 48-26 84-26s72 10 84 26c-8 22-48 34-84 34s-76-12-84-34z" fill="#1a1a20"/>
+  <path d="M716 596c12-16 48-26 84-26s72 10 84 26c-8 22-48 34-84 34s-76-12-84-34z" fill="#2a2a34"/>
   <!-- lumbar -->
-  <rect x="758" y="548" width="84" height="28" rx="10" fill="#222228"/>
+  <rect x="758" y="548" width="84" height="28" rx="10" fill="#35353e"/>
   <!-- back mesh lobes -->
   <path d="M724 430c8-52 36-86 76-86 10 0 18 4 22 12-18 18-28 48-30 86-22 8-50 22-68 46-8-16-8-36 0-58z" fill="url(#mesh)"/>
   <path d="M876 430c-8-52-36-86-76-86-10 0-18 4-22 12 18 18 28 48 30 86 22 8 50 22 68 46 8-16 8-36 0-58z" fill="url(#mesh)"/>
   <path d="M724 430c8-52 36-86 76-86 10 0 18 4 22 12-18 18-28 48-30 86-22 8-50 22-68 46-8-16-8-36 0-58z" fill="url(#grid)" opacity=".45"/>
   <path d="M876 430c-8-52-36-86-76-86-10 0-18 4-22 12 18 18 28 48 30 86 22 8 50 22 68 46 8-16 8-36 0-58z" fill="url(#grid)" opacity=".45"/>
   <!-- headrest -->
-  <rect x="758" y="328" width="84" height="36" rx="14" fill="#202026"/>
-  <rect x="770" y="338" width="60" height="16" rx="8" fill="#2a2a32"/>
+  <rect x="758" y="328" width="84" height="36" rx="14" fill="#32323a"/>
+  <rect x="770" y="338" width="60" height="16" rx="8" fill="#3e3e48"/>
   <!-- arms -->
-  <path d="M700 520c-18 8-28 28-24 50 18 4 40 6 58 4 2-22-8-42-34-54z" fill="#1c1c22"/>
-  <path d="M900 520c18 8 28 28 24 50-18 4-40 6-58 4-2-22 8-42 34-54z" fill="#1c1c22"/>
-  <rect x="686" y="568" width="52" height="10" rx="4" fill="#26262c"/>
-  <rect x="862" y="568" width="52" height="10" rx="4" fill="#26262c"/>
+  <path d="M700 520c-18 8-28 28-24 50 18 4 40 6 58 4 2-22-8-42-34-54z" fill="#2c2c34"/>
+  <path d="M900 520c18 8 28 28 24 50-18 4-40 6-58 4-2-22 8-42 34-54z" fill="#2c2c34"/>
+  <rect x="686" y="568" width="52" height="10" rx="4" fill="#3a3a44"/>
+  <rect x="862" y="568" width="52" height="10" rx="4" fill="#3a3a44"/>
 </svg>

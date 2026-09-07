@@ -102,8 +102,8 @@ img { display: block; max-width: 100%; }
 .neon { display: block; }
 .neon-rope {
   fill: none;
-  stroke: #ff2bd6;
-  stroke-width: 3.2;
+  stroke: #ff3adf;
+  stroke-width: 4.4;
   stroke-linecap: round;
   filter: url(#neon-glow);
 }
@@ -121,16 +121,16 @@ img { display: block; max-width: 100%; }
 
 .obj {
   position: absolute;
-  right: 6%;
-  top: 22%;
-  width: min(42vw, 380px);
-  color: #f4f1ea;
-  filter: drop-shadow(0 0 18px rgba(62, 232, 255, 0.18));
+  right: 4%;
+  top: 14%;
+  width: min(62vw, 560px);
+  color: #f6f3ec;
+  filter: drop-shadow(0 0 22px rgba(62, 232, 255, 0.32));
   pointer-events: none;
 }
-.obj-helmet { width: min(32vw, 280px); top: 18%; color: #e8eef4; filter: drop-shadow(0 0 16px rgba(116, 168, 255, 0.22)); }
-.obj-mic { width: min(22vw, 190px); top: 16%; right: 12%; color: #ffe6f7; filter: drop-shadow(0 0 16px rgba(255, 43, 214, 0.28)); }
-.obj svg { display: block; width: 100%; height: auto; }
+.obj-helmet { width: min(46vw, 340px); top: 12%; right: 7%; color: #eef3f8; filter: drop-shadow(0 0 20px rgba(116, 168, 255, 0.34)); }
+.obj-mic { width: min(28vw, 220px); top: 10%; right: 12%; color: #ffe6f7; filter: drop-shadow(0 0 22px rgba(255, 43, 214, 0.4)); }
+.obj svg { display: block; width: 100%; height: auto; stroke-width: 2.35; }
 
 /* type */
 .type-layer {
@@ -141,6 +141,7 @@ img { display: block; max-width: 100%; }
 }
 .wordmark {
   position: absolute;
+  z-index: 6;
   margin: 0;
   color: #fff;
   width: min(86vw, 920px);
@@ -167,16 +168,16 @@ html.motion .neon-rope {
 .chapter-line {
   position: absolute;
   left: 1.1rem;
-  bottom: 18%;
+  bottom: 22%;
   margin: 0;
-  max-width: 12ch;
+  max-width: 11ch;
   color: #fff;
-  font-size: clamp(1.35rem, 4.6vw, 2.6rem);
+  font-size: clamp(1.45rem, 5.2vw, 2.7rem);
   font-weight: 500;
   letter-spacing: 0.08em;
   line-height: 1.05;
   text-transform: uppercase;
-  text-shadow: 0 0 24px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 8px 28px rgba(0, 0, 0, 0.85);
 }
 
 .scroll-cue {
@@ -398,7 +399,7 @@ html.static .door-name { font-size: 0.72rem; letter-spacing: 0.14em; }
   .wrap { width: min(calc(100% - 2.8rem), var(--max)); }
   .site-bar { padding: 0 1.4rem; height: 3.6rem; }
   .site-bar__nav a { padding: 0.45rem 0.95rem; font-size: 0.76rem; }
-  .chapter-line { left: 2.2rem; max-width: 16ch; }
+  .chapter-line { left: 2.2rem; bottom: 18%; max-width: 18ch; }
   .obj { right: 10%; top: 20%; }
   .panel { padding: 6.5rem 0; }
   .panel-split { grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: end; }
