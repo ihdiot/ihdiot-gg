@@ -27,6 +27,19 @@
   const year = document.querySelector("#year");
   if (year) year.textContent = new Date().getFullYear();
 
+  document.querySelectorAll(".door[href^='#']").forEach((door) => {
+    door.addEventListener("click", (event) => {
+      const href = door.getAttribute("href");
+      const target = href && document.querySelector(href);
+      if (!target) return;
+      event.preventDefault();
+      const y = Math.round(target.getBoundingClientRect().top + window.scrollY);
+      window.scrollTo(0, y);
+      if (window.ScrollTrigger) ScrollTrigger.update();
+      history.replaceState(null, "", href);
+    });
+  });
+
   document.querySelectorAll("[data-waitlist]").forEach((button) => {
     button.addEventListener("click", () => {
       const feedback = button.parentElement.querySelector(".feedback");
