@@ -33,10 +33,20 @@
       const target = href && document.querySelector(href);
       if (!target) return;
       event.preventDefault();
-      const y = Math.round(target.getBoundingClientRect().top + window.scrollY);
-      window.scrollTo(0, y);
-      if (window.ScrollTrigger) ScrollTrigger.update();
-      history.replaceState(null, "", href);
+      const prev = html.style.scrollBehavior;
+      html.style.scrollBehavior = "auto";
+      if (window.ScrollTrigger) {
+        ScrollTrigger.getAll().forEach((st) => {
+          if (st.trigger === hero && st.isActive) st.scroll(st.end + 2);
+        });
+        ScrollTrigger.update();
+      }
+      requestAnimationFrame(() => {
+        const y = Math.round(target.getBoundingClientRect().top + window.scrollY);
+        window.scrollTo({ top: Math.max(0, y), behavior: "instant" });
+        html.style.scrollBehavior = prev;
+        history.replaceState(null, "", href);
+      });
     });
   });
 
